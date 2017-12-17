@@ -1,0 +1,91 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Fri Dec 15 13:39:46 2017
+# Process ID: 17908
+# Current directory: D:/Project/VHDL/EX9_2/EX9_2.runs/impl_1
+# Command line: vivado.exe -log counter3.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source counter3.tcl -notrace
+# Log file: D:/Project/VHDL/EX9_2/EX9_2.runs/impl_1/counter3.vdi
+# Journal file: D:/Project/VHDL/EX9_2/EX9_2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source counter3.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.4
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 457.223 ; gain = 246.941
+INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC 23-20] Rule violation (MDRV-1) Multiple Driver Nets - Net in2[0] has multiple drivers: in2_reg[0]__0/Q, in2_reg[0]/Q.
+ERROR: [DRC 23-20] Rule violation (MDRV-1) Multiple Driver Nets - Net in2[1] has multiple drivers: in2_reg[1]__0/Q, in2_reg[1]/Q.
+ERROR: [DRC 23-20] Rule violation (MDRV-1) Multiple Driver Nets - Net in2[2] has multiple drivers: in2_reg[2]/Q, in2_reg[2]__0/Q.
+ERROR: [DRC 23-20] Rule violation (MDRV-1) Multiple Driver Nets - Net in2[3] has multiple drivers: in2_reg[3]/Q, in2_reg[3]__0/Q.
+INFO: [Project 1-461] DRC finished with 4 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 466.602 ; gain = 9.379
+INFO: [Common 17-83] Releasing license: Implementation
+13 Infos, 14 Warnings, 14 Critical Warnings and 5 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 13:40:20 2017...

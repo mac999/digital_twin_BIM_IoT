@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Wed Dec 13 15:53:12 2017
+# Process ID: 3208
+# Current directory: D:/Project/VHDL/EX3_3/EX3_3.runs/impl_1
+# Command line: vivado.exe -log bit2led.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bit2led.tcl -notrace
+# Log file: D:/Project/VHDL/EX3_3/EX3_3.runs/impl_1/bit2led.vdi
+# Journal file: D:/Project/VHDL/EX3_3/EX3_3.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source bit2led.tcl -notrace

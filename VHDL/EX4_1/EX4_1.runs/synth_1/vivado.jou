@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Wed Dec 13 20:39:55 2017
+# Process ID: 13732
+# Current directory: D:/Project/VHDL/EX4_1/EX4_1.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: D:/Project/VHDL/EX4_1/EX4_1.runs/synth_1/top.vds
+# Journal file: D:/Project/VHDL/EX4_1/EX4_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace

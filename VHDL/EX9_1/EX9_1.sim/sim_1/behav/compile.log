@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/VHDL/EX9_1/EX9_1.srcs/sources_1/new/coffee_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coffee_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/VHDL/EX9_1/EX9_1.srcs/sim_1/new/coffee_machine_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coffee_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/VHDL/EX9_1/EX9_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

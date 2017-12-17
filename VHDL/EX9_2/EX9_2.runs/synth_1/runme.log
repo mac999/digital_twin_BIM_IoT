@@ -1,0 +1,374 @@
+
+*** Running vivado
+    with args -log counter3.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter3.tcl
+
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+  **** IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source counter3.tcl -notrace
+Command: synth_design -top counter3 -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16808 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 283.176 ; gain = 72.707
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'counter3' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:22]
+INFO: [Synth 8-638] synthesizing module 'EX5_1' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/imports/new/EX5_1.v:23]
+INFO: [Synth 8-256] done synthesizing module 'EX5_1' (1#1) [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/imports/new/EX5_1.v:23]
+INFO: [Synth 8-256] done synthesizing module 'counter3' (2#1) [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:22]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 319.621 ; gain = 109.152
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 319.621 ; gain = 109.152
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Project/VHDL/EX9_2/EX9_2.srcs/constrs_1/new/EX8_3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/counter3_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/counter3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 615.961 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "in" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "q2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module counter3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "q2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "in" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:26 ; elapsed = 00:01:32 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:32 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (in_reg[3]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (in_reg[2]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (in_reg[1]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (in_reg[0]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (in_reg[3]__0) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (in_reg[2]__0) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (in_reg[1]__0) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (in_reg[0]__0) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[0]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[1]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[2]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[3]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[4]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[5]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[6]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[7]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[8]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[9]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[10]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[11]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[12]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[13]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[14]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[15]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[16]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[17]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[18]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[19]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[20]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[21]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[22]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[23]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[24]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[25]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[26]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[27]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[28]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[29]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[30]) is unused and will be removed from module counter3.
+WARNING: [Synth 8-3332] Sequential element (q_reg[31]) is unused and will be removed from module counter3.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:26 ; elapsed = 00:01:32 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[3] with 1st driver pin 'in2_reg[3]/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:59]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[3] with 2nd driver pin 'in2_reg[3]__0/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:46]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[2] with 1st driver pin 'in2_reg[2]/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:59]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[2] with 2nd driver pin 'in2_reg[2]__0/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:46]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[1] with 1st driver pin 'in2_reg[1]/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:59]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[1] with 2nd driver pin 'in2_reg[1]__0/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:46]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[0] with 1st driver pin 'in2_reg[0]/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:59]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net in2[0] with 2nd driver pin 'in2_reg[0]__0/Q' [D:/Project/VHDL/EX9_2/EX9_2.srcs/sources_1/new/counter3.v:46]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        4|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |    32|
+|4     |LUT2   |    37|
+|5     |LUT3   |     6|
+|6     |LUT4   |     8|
+|7     |LUT5   |     5|
+|8     |LUT6   |     4|
+|9     |FDRE   |    45|
+|10    |IBUF   |     2|
+|11    |OBUF   |     8|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   156|
+|2     |  seg    |EX5_1  |     7|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 615.961 ; gain = 405.492
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 8 critical warnings and 40 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:01:06 . Memory (MB): peak = 615.961 ; gain = 109.152
+Synthesis Optimization Complete : Time (s): cpu = 00:01:29 ; elapsed = 00:01:35 . Memory (MB): peak = 615.961 ; gain = 405.492
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 54 Warnings, 22 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:28 . Memory (MB): peak = 615.961 ; gain = 405.492
+INFO: [Common 17-1381] The checkpoint 'D:/Project/VHDL/EX9_2/EX9_2.runs/synth_1/counter3.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 615.961 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 13:33:36 2017...

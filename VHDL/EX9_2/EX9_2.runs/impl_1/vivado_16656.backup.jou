@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Fri Dec 15 11:17:32 2017
+# Process ID: 16656
+# Current directory: D:/Project/VHDL/EX9_2/EX9_2.runs/impl_1
+# Command line: vivado.exe -log EX8_3.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source EX8_3.tcl -notrace
+# Log file: D:/Project/VHDL/EX9_2/EX9_2.runs/impl_1/EX8_3.vdi
+# Journal file: D:/Project/VHDL/EX9_2/EX9_2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source EX8_3.tcl -notrace

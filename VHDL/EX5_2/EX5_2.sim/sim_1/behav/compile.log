@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/VHDL/EX5_2/EX5_2.srcs/sources_1/new/EX5_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX5_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/VHDL/EX5_2/EX5_2.srcs/sim_1/new/ex5_1_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ex5_1_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/VHDL/EX5_2/EX5_2.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

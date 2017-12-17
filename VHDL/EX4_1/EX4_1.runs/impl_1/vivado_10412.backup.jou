@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Wed Dec 13 13:38:41 2017
+# Process ID: 10412
+# Current directory: D:/Project/VHDL/EX2/EX2.runs/impl_1
+# Command line: vivado.exe -log ander.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ander.tcl -notrace
+# Log file: D:/Project/VHDL/EX2/EX2.runs/impl_1/ander.vdi
+# Journal file: D:/Project/VHDL/EX2/EX2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source ander.tcl -notrace
