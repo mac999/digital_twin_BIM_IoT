@@ -1,0 +1,7 @@
+Assembly-CSharp.dll
+UnityEngine.Analytics.dll
+nunit.framework.dll
+UnityEngine.UI.dll
+UnityEngine.HoloLens.dll
+UnityEngine.Networking.dll
+UnityEngine.VR.dll
