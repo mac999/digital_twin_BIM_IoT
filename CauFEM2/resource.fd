@@ -1,0 +1,8 @@
+!MS$FREEFORM
+! Microsoft Developer Studio generated include file.
+! Used by CauFEM.rc
+!
+      integer, parameter :: IDD_ABOUTBOX                    = 100
+      integer, parameter :: IDR_MAINFRAME                   = 128
+      integer, parameter :: IDR_CAUFEMTYPE                  = 129
+      integer, parameter :: IDM_FEM_CALC_TRUST              = 32771
