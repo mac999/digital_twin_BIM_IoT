@@ -1,0 +1,219 @@
+/*************************************************************/
+/* Modal Window setup                                        */
+/*************************************************************/
+/* The Modal (background) */
+.modalOptions {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(128,128,128); /* Fallback color */
+    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+  }
+  
+  .modal-title {
+      font-weight: bold;
+      font-size: 24px;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 450px;
+  }
+  
+  /* The Close Button */
+  .modal-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/*************************************************************/
+/* START Floating menu                                       */
+/*************************************************************/
+#menu {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.backdrop {
+    display: inline-block;
+    background: rgba(42, 42, 42, 0.7);
+    border-radius: 5px;
+    border: 1px solid #444;
+    padding: 5px 10px;
+    color: #fff;
+    line-height: 150%;
+    font-size: small;
+    z-index: 1000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    width: 220px;
+    height: 40px; /* initial height */
+}
+
+/* The navigation menu links */
+.backdrop a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+/* When you mouse over the navigation links, change their color */
+.backdrop a:hover {
+    color: #f1f1f1;
+  }
+  
+/* Position and style the close button (top right corner) */
+.backdrop .closebtn {
+    /* position: absolute; */
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.menuStart {
+    width: 100%;
+    height: 2px;
+    background-color: silver;
+    margin-bottom: 6px;
+}
+
+.subMenu {
+    padding: 3px 1px 3px 10px;
+}
+.menuButtons{
+    float: right;
+    margin-right: 30px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.menu-accordion {
+    background-color: rgb(0, 120, 120, 1.0);
+    color: #fff;
+    font-size: 12pt;
+    cursor: pointer;
+    padding: 5px;
+    margin: 2px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .menu-accordion:hover {
+    background-color: rgb(50, 175, 175);
+    color: #eee;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+.menu-panel {
+    padding: 0 4px;
+    background: rgba(42, 42, 42, 0.7);
+    display: block;
+    overflow: scroll;
+    border: solid 1px black;
+    min-height: 40px;
+    max-height: 200px;
+  }
+.menuCounts {
+    font-size: 11px;
+    float: right;
+}
+
+.menuitemButton {
+    font-size: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    padding: 0px 3px 0px 3px;
+    margin: 0px 3px;
+}
+.menuItemName {
+    cursor: pointer;
+}
+.menu-panel-item {
+    padding: 0px 2px 0px 2px;
+    margin: 2px;
+    color: black;
+}
+.menu-panel-item-friendly {
+    background: rgba(0, 250, 250, 0.81);
+}
+.menu-panel-item-hostile {
+    background: rgba(230, 10, 10, 0.81);
+}
+.menu-panel-item-neutral {
+    background: rgba(100, 250, 100, 0.81);
+}
+.menu-panel-item-unknown {
+    background: rgba(255, 255, 0, 0.81);
+}
+.menu-panel-item-normal {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+/*************************************************************/
+/* END Floating menu                                         */
+/*************************************************************/
+
+#heightSliderLabel, #heightValue {
+    vertical-align: top;
+}
+
+.backdrop a:link, .backdrop a:visited, .backdrop a:hover {
+    color: #fff
+}
+
+.cover {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+html, body, #cesiumContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: sans-serif;
+    background: #000;
+}
+
+button.cesium-infoBox-camera {
+    display: none;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Use correct character set. -->
+        <meta charset="utf-8">
+        <!-- Tell IE to use the latest, best version. -->
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <!-- Make the app on mobile take up the full browser screen and disable user scaling. -->
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <title>Cingulara Cesium Starter Kit</title>
+        <!-- The Cesium library. -->
+        <script src="https://cesiumjs.org/releases/1.58/Build/Cesium/Cesium.js"></script>
+        <link href="https://cesiumjs.org/releases/1.58/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+        <!-- Style our app. -->
+        <link rel="stylesheet" href="css/index.css" media="screen">
+    </head>
+    <body>
+        <!-- A container for the Cesium Viewer to live in. -->
+        <div id="cesiumContainer" class="fullSize"></div>
+
+        <!-- Some input elements for our app. -->
+        <div class="backdrop" id="menu">
+            <h2 style="cursor: pointer;" id="menuOptions" title="Open Options Menu" onclick="openNav()">&#9776; Cesium Options</h2>
+            <button class="menu-accordion">Shapes <span class="menuCounts">(<span id="menuShapeCount">0</span>)</span></button>
+            <div class="menu-panel" id="panelShapes">
+            </div>
+            <button class="menu-accordion">Map Layer Options</button>
+            <div class="menu-panel">
+                <div class="subMenu">
+                    <form action="">
+                    <input id="mapLayers" name="mapLayers" type="radio" onclick="changeLayers('satellite')" value="satellite" checked > Satellite <br />
+                    <input id="mapLayers" name="mapLayers" type="radio" onclick="changeLayers('roads')" value="roads" > Roads <br />
+                    <input id="mapLayers" name="mapLayers" type="radio" onclick="changeLayers('hybrid')" value="hybrid" > Hybrid 
+                    </form>
+                </div>
+            </div>
+            <button class="menu-accordion">View Options</button>
+            <div class="menu-panel">
+                <div class="subMenu">
+                    <div class="nowrap">
+                        <input id="showCursorLocation" type="checkbox" />
+                        <label for="showCursorLocation">Show Cursor Location</label>
+                    </div>
+                </div>
+            </div>
+            <button class="menu-accordion">Add Shapes</button>
+            <div class="menu-panel">
+                <div class="subMenu">
+                    <div class="nowrap">
+                        <label for="btnDrawCircle">Draw Circle</label>
+                        <button class="menuButtons" id="btnDrawCircle">...</button>
+                    </div>
+
+                    <div class="nowrap">
+                        <label for="btnDrawPolygon">Draw Polygon</label>
+                        <button class="menuButtons" id="btnDrawPolygon">...</button>
+                    </div>
+                </div>
+            </div>
+            <button class="menu-accordion">Tools</button>
+            <div class="menu-panel">
+                <div class="subMenu">
+                    <div class="nowrap">
+                        <label for="btnSnapshot">Snapshot</label>
+                        <button class="menuButtons" id="btnSnapshot">...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our app code. -->
+        <script src="js/cesium-scripts.js"></script>
+        <script src="lib/jscolor/jscolor.js"></script>
+
+        <!-- The Modal for Drawing Options -->
+        <div id="divModalDrawingOptions" class="modalOptions">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeDrawingOptionsModal();">&times;</span>
+                <input id="modalDrawingOptionsId" type="hidden" value="" />
+                <h3 class="modal-title">Drawing Options</h3>
+                <div>Name: <br/>
+                    <input id="modalDrawingOptionsName" type="text" maxlength="100" size="60" />
+                </div><br />
+                <div>Color: <input id="modalDrawingOptionsColor" class="jscolor" value="00008b">
+                </div><br />
+                <div>Description: <br />
+                    <textarea id="modalDrawingOptionsDescription" cols="60" rows="4"></textarea>
+                </div>
+                <br /><br />
+                <button id="btnDrawingOptionsDraw" title="Draw the Shape" onclick="setDrawingOptions();">Draw</button> 
+                <button id="btnDrawingOptionsSave" title="Save the Information" style="display: none;" onclick="saveDrawingOptions();">Save</button> 
+                <button id="btnDrawingOptionsCancel" title="Cancel this window" onclick="cancelDrawingOptions();">Cancel</button> 
+            </div>
+        </div>
+
+    </body>
+</html>
