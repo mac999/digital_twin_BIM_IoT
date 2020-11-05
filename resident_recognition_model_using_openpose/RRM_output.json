@@ -1,0 +1,122 @@
+[
+    {
+        "name":"active.mp4_000003958_keypoints.json",
+        "neck point":[
+            157.0989990234375,
+            119.2699966430664,
+            0.8503029942512512
+        ],
+        "no":0,
+        "position":"stand"
+    },
+    {
+        "name":"active.mp4_000003958_keypoints.json",
+        "neck point":[
+            636.1119995117188,
+            245.8939971923828,
+            0.8151479959487915
+        ],
+        "no":1,
+        "position":"stand"
+    },
+    {
+        "name":"active.mp4_000005333_keypoints.json",
+        "neck point":[
+            150.58599853515625,
+            119.22100067138672,
+            0.8883690237998962
+        ],
+        "no":2,
+        "position":"stand"
+    },
+    {
+        "name":"active.mp4_000005333_keypoints.json",
+        "neck point":[
+            561.7059936523438,
+            183.26800537109375,
+            0.6396600008010864
+        ],
+        "no":3,
+        "position":"stand"
+    },
+    {
+        "name":"active.mp4_000009208_keypoints.json",
+        "neck point":[
+            555.197998046875,
+            179.31199645996094,
+            0.7034410238265991
+        ],
+        "no":4,
+        "position":"stand"
+    },
+    {
+        "name":"active.mp4_000009208_keypoints.json",
+        "neck point":[
+            114.06999969482422,
+            136.22999572753906,
+            0.7871519923210144
+        ],
+        "no":5,
+        "position":"stand"
+    },
+    {
+        "name":"idle.mp4_000008458_keypoints.json",
+        "neck point":[
+            312.4410095214844,
+            162.39599609375,
+            0.8767120242118835
+        ],
+        "no":6,
+        "position":"sit"
+    },
+    {
+        "name":"idle.mp4_000008458_keypoints.json",
+        "neck point":[
+            450.79998779296875,
+            172.74600219726562,
+            0.8743150234222412
+        ],
+        "no":7,
+        "position":"sit"
+    },
+    {
+        "name":"idle.mp4_000013250_keypoints.json",
+        "neck point":[
+            321.5639953613281,
+            166.25100708007812,
+            0.844044029712677
+        ],
+        "no":8,
+        "position":"sit"
+    },
+    {
+        "name":"idle.mp4_000013250_keypoints.json",
+        "neck point":[
+            446.88299560546875,
+            180.6020050048828,
+            0.8381699919700623
+        ],
+        "no":9,
+        "position":"sit"
+    },
+    {
+        "name":"sleep.mp4_000001416_keypoints.json",
+        "neck point":[
+            283.7380065917969,
+            342.43798828125,
+            0.6697369813919067
+        ],
+        "no":10,
+        "position":"sleep"
+    },
+    {
+        "name":"sleep.mp4_000005875_keypoints.json",
+        "neck point":[
+            268.06298828125,
+            331.99700927734375,
+            0.7111989855766296
+        ],
+        "no":11,
+        "position":"sleep"
+    }
+]
