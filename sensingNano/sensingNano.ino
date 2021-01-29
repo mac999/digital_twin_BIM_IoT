@@ -111,7 +111,7 @@ void sensingNano(void) {
     Serial.print('\t');
     Serial.println(z);
 
-    display.setCursor(0, 9);
+    display.setCursor(0, 8);
     String data = String("A: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);    
   }
@@ -125,7 +125,7 @@ void sensingNano(void) {
     Serial.print('\t');
     Serial.println(z);
 
-    display.setCursor(0, 18);
+    display.setCursor(0, 16);
     String data = String("M: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);       
   }
@@ -148,7 +148,7 @@ void sensingNano(void) {
   Serial.print(pressure);
   Serial.println(" kPa");
 
-  display.setCursor(0, 27);
+  display.setCursor(0, 24);
   String data = String("THP: ") + String(temperature, 1) + ", " + String(humidity, 1) + ", " + String(pressure, 1);
   display.println(data);
 
