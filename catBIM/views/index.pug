@@ -1,0 +1,9 @@
+extends layout.pug
+include mixins/_thumbCard
+
+block content
+  .album.py-5.bg-light
+    .container
+      .row
+        each user in users
+          +thumbCard(user)

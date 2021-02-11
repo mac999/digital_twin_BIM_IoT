@@ -1,0 +1,24 @@
+header
+  .collapse.bg-dark#navbarHeader
+    .container
+      .row
+        .col-sm-8.col-md-7.py-4
+          h4.text-white Hidden Content
+          p.text-muted Until now, we look at one side of 2-dimension framework force in the various engineering information which has been designed. Consequently, the information in the framework is transformed from the original design concept.
+        .col-sm-4.offset-md-1.py-4
+          h4.text-white Contact
+          ul.list-unstyled
+            li
+              a.text-white(href='#') Facebook
+            li
+              a.text-white(href='#') Twitter
+            li
+              a.text-white(href='#') Instagram
+  nav.navbar.navbar-dark.bg-dark.shadow-sm
+    .container.d-flex.justify-content-between
+      a.navbar-brand.d-flex.align-items-center
+        //- Including the svg logo
+        include logo.svg
+        strong BIM Example
+      button.navbar-toggler.collapsed&attributes({'data-toggle': 'collapse'}, {'data-target': '#navbarHeader'})
+        span.navbar-toggler-icon
