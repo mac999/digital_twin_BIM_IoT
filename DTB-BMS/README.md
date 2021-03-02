@@ -1,4 +1,4 @@
-# Online DTB-BMS(Digital Twin and BIM based Building Management System)
+# DTB-BMS(Digital Twin and BIM based Building Management System)
 
 [![Node.js](https://img.shields.io/badge/Node.js-8.11.1-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-6.1.0-blue.svg)](https://www.npmjs.com/)
@@ -11,9 +11,7 @@
 [![Viewer](https://img.shields.io/badge/Viewer-v7-green.svg)](https://forge.autodesk.com/)
 
 # Description
-This sample is part of the [Online DTB-BMS(Digital Twin and BIM based Building Management System)](https://forge.autodesk.com/developer/learn/viewer-app).
-
-In this sample, we will be creating a simple web page that allows end users to upload some files to Forge storage service, then translate them and display them in a web browser.
+In this DTB-BMS(Digital Twin and BIM based Building Management System), we will be creating a simple web page that allows end users to upload some files to Forge storage service, then translate them and display them in a web browser.
 
 - Authenticate your developer identity
 - Create a bucket

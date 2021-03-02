@@ -9,7 +9,7 @@ var Axios = require('axios');               // A Promised base http client
 var bodyParser = require('body-parser');    // Receive JSON format
 var mongoose = require('mongoose');
 var cors = require('cors')
-const db = require('./model/db');
+const {db} = require('./model/db.js');
 
 // Set up Express web server
 var app = express();
@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/www'));
 // DB
 function connectDB() {
     db.connect(); 
-    // db.dumpSensorData();
+    db.dumpSensorData();
 }
 
 // This is for web server to start listening to port 3000
