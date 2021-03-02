@@ -1,0 +1,22 @@
+#dashboard{
+  overflow: auto;
+  // height: calc(100vh - 100px);
+  height: calc(500px);
+}
+
+.dashboardPanel {
+  width: 100%;
+  padding: 3%;
+  display: block;
+}
+
+.transition-width {
+  transition: width 1s ease-in-out;
+}
+
+.forgeViewer {
+    background-color: darksalmon;
+    // height: 500px;
+    // width: 800px;
+    position: relative;
+}
