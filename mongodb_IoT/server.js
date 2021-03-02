@@ -1,3 +1,7 @@
+// Title: MongoDB for IoT connection
+// Developer: Taewook Kang
+// Created date: 2021/2/26
+// 
 const express = require('express');
 const bodyParser = require('body-parser');
 var cors = require('cors')
