@@ -149,14 +149,42 @@
             if (viewable) {
                 viewer.loadDocumentNode(doc, viewable).then(function(result) {
                     console.log('Viewable Loaded!');
-                    viewer.loadExtension("NestedViewerExtension", { filter: ["2d"], crossSelection: true });
-
+                    initViewer(viewer);                    
                     renderSensorData();
                 }).catch(function(err) {
                     console.log('Viewable failed to load.');
                     console.log(err);
                 }
               )
+            }
+        }
+
+        function initViewer(viewer) {
+            // viewer.setQualityLevel(/* ambient shadows */ false, /* antialiasing */ true);
+            viewer.setGroundShadow(true);
+            viewer.setGroundReflection(false);
+            viewer.setGhosting(true);
+            viewer.setEnvMapBackground(true);
+            viewer.setLightPreset(5);
+            viewer.setSelectionColor(new THREE.Color(0xEBB30B));
+            // viewer.loadExtension("NestedViewerExtension", { filter: ["2d"], crossSelection: true });
+ 
+            viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT, onSelectionChanged);
+        }
+
+        function onSelectionChanged(event) {
+            // Let's only control selection in case of
+            // single user selection
+            if (event.dbIdArray.length === 1) {
+                viewer.getProperties(event.dbIdArray[0], function(data) {
+                    console.log(data.name);
+                    if(data.name.indexOf("Column") >= 0)
+                    {
+                        var instanceTree = viewer.model.getData().instanceTree;
+                        var parentId = instanceTree.getNodeParentId(event.dbIdArray[0])
+                        viewer.select([parentId]);
+                    }
+                });
             }
         }
 
