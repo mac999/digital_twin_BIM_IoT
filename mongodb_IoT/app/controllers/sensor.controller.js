@@ -46,12 +46,12 @@ exports.findAll = (req, res) => {
 
     try {
         if(typeof req.query.limit != 'undefined') {
-            Record.find(query).limit(parseInt(req.query.limit)).then(records => {
+            Record.find(query).sort({_id:-1}).limit(parseInt(req.query.limit)).then(records => {
                 res.send(records);
             });
         }
         else {
-            Record.find(query).then(records => {
+            Record.find(query).sort({_id:-1}).then(records => {
                 res.send(records);
             });
         }
