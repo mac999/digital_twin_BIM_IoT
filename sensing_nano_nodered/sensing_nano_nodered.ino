@@ -12,6 +12,7 @@
 #include <Arduino_LSM9DS1.h>
 #include <Arduino_HTS221.h>
 #include <Arduino_LPS22HB.h>
+#include <Arduino_APDS9960.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
@@ -51,6 +52,11 @@ void setup() {
   display.setTextSize(1); // Draw 2X-scale text
   display.setTextColor(SSD1306_WHITE);
   // display.setFont(ArialMT_Plain_10);
+
+  if (!APDS.begin()) {
+      Serial.println("Error initializing APDS9960 sensor.");
+      while (true); // Stop forever
+  }
 
   if (!HTS.begin()) {
     Serial.println("Failed to initialize humidity temperature sensor!");
@@ -99,11 +105,35 @@ void sensingNano(void) {
   Serial.print(", ");
   Serial.print(pressure);
   
-  display.setCursor(0, 24);
+  display.setCursor(0, 0);
   String data = String("THP: ") + String(temperature, 1) + ", " + String(humidity, 1) + ", " + String(pressure, 1);
   display.println(data);
 
+  // light, RGB
+  int proximity = 0;
+  if (APDS.proximityAvailable()) {
+      proximity = APDS.readProximity();
+  }
 
+  int r = 0, g = 0, b = 0;
+  if (APDS.colorAvailable()) {
+      APDS.readColor(r, g, b);
+  }
+
+  // print each of the sensor values
+  Serial.print(", ");  
+  Serial.print(proximity);
+  Serial.print(", ");
+  Serial.print(r);
+  Serial.print(", ");
+  Serial.print(g);
+  Serial.print(", ");
+  Serial.print(b);
+
+  display.setCursor(0, 8);
+  data = String("L: ") + String(proximity, DEC) + ", " + String(r, DEC) + ", " + String(g, DEC) + ", " + String(b, DEC);
+  display.println(data);
+  
   float x, y, z;
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(x, y, z);
@@ -115,7 +145,7 @@ void sensingNano(void) {
     Serial.print(", ");
     Serial.print(z);
 
-    display.setCursor(0, 0);
+    display.setCursor(0, 16);
     String data = String("G: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);
   }
@@ -130,7 +160,7 @@ void sensingNano(void) {
     Serial.print(", ");
     Serial.print(z);
 
-    display.setCursor(0, 8);
+    display.setCursor(0, 24);
     String data = String("A: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);    
   }
@@ -145,7 +175,7 @@ void sensingNano(void) {
     Serial.print(", ");
     Serial.print(z);
 
-    display.setCursor(0, 16);
+    display.setCursor(0, 32);
     String data = String("M: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);       
   }
@@ -153,5 +183,5 @@ void sensingNano(void) {
   Serial.println(" ");
 
   display.display();      // Show initial text
-  delay(500);
+  delay(5000);
 }
