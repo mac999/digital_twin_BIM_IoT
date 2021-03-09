@@ -21,13 +21,28 @@ In this DTB-BMS(Digital Twin and BIM based Building Management System), we will 
 - Translate the file to the SVF format
 - Display the file in a web browser
 
-## Thumbnail
-![thumbnail](/thumbnail.png)
-
 # Setup
 
 ## Prerequisites
+For Arduino nano 
+1. Install [Arduino IDE](https://www.arduino.cc/en/software)
+2. Connect Arduino nano and notebook
+3. Upload [IoT sensing code](https://github.com/mac999/Projects/tree/master/sensing_nano_nodered)
 
+For node-red 
+1. Install [node.js](https://nodejs.org/ko/download/)
+2. Install [node-red](https://nodered.org/docs/getting-started/local)
+3. Import [IoT-DB connection code](https://github.com/mac999/Projects/blob/master/DTB-BMS/flows.json)
+4. Install node-red palette such as Dashboard, Serial, MongoDB.
+
+For MongoDB database
+1. Install [MongoDB](https://docs.mongodb.com/manual/installation/)
+
+For MongoDB REST API server
+1. Download [REST API server](https://github.com/mac999/Projects/tree/master/mongodb_IoT)
+2. Run node server
+
+For Autodesk Forge App account creation
 1. A Forge account: [Getting Started with Forge](https://forge.autodesk.com/developer/getting-started)
 2. A text editor of your choice. (For example Brackets or Visual Studio Code are good choices.)
 3. A basic knowledge of :
@@ -36,6 +51,7 @@ In this DTB-BMS(Digital Twin and BIM based Building Management System), we will 
     - Command-line programs
       - Node.js Command Line (for Windows users)
       - Terminal (for Mac/Linux/Unix users)
+4. Download [DTB-BMS server code](https://github.com/mac999/Projects/tree/master/DTB-BMS) and Run npm start
 
 ## Running locally
 
