@@ -177,6 +177,8 @@ app.post('/api/forge/datamanagement/bucket/upload', upload.single('fileToUpload'
                 'Content-Disposition': req.file.originalname,
                 'Content-Length': filecontent.length
             },
+            maxContentLength: Infinity,
+            maxBodyLength: Infinity,
             data: filecontent
         })
             .then(function (response) {
