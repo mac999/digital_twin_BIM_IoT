@@ -175,8 +175,26 @@
             oReq.send();    // Fire the request
         }
 
+        var data = [
+           ['ID', 'programmer'],
+           ['P', 'taewook'],
+           ['C1', 'sunwoo'],
+           ['C2', 'yeonsoo']
+        ];
+          
         function downloadSensorData() {
-            alert("Download CSV file");
+            var csv = 'Name,Title\n';
+            data.forEach(function(row) {
+                    csv += row.join(',');
+                    csv += "\n";
+            });
+         
+            console.log(csv);
+            var hiddenElement = document.createElement('a');
+            hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = 'data.csv';
+            hiddenElement.click();
         }
 
         /**
