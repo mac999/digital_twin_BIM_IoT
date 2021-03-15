@@ -36,7 +36,7 @@
     <h4>DTB-BMS(Digital Twin and BIM based Building Management System)</h4>
     <div class="container-fluid fill">
         <div class="row fill">               
-            <div class="col-sm-7 fill">          
+            <div id="containViewer" class="col-sm-7 fill">          
                 <div id="forgeViewer"> 
                 </div>
             </div> 
@@ -45,7 +45,22 @@
     <div class="container-fluid fill">
         <div class="row">       
             <div class="col-sm-12 fill">
-                <button id="reflashSensorData" onclick="renderSensorData()">Reflash IoT sensor data</button>                    
+                <br/>
+                <button id="reflashSensorData" onclick="renderSensorData()">Reflash IoT sensor data</button>
+                <button id="downloadSensorData" onclick="downloadSensorData()">Download data</button>                  
+                <label>Date</label>
+                <input id="beginDate" type="date" value="2021-03-01">
+                <input id="endDate" type="date" value="2021-05-01">  
+                <label>Area</label>
+                <input type="text" id="area" value="all"></input>
+                <label>Sensor</label>
+                <select id="sensor" class="selectpicker">
+                    <option value="all">all</option>
+                    <option value="temperature">temperature</option>
+                    <option value="humidity">humidity</option>
+                    <option value="light">light</option>
+                </select>                     
+
                 <div id="sensorDataTable" class="table-responsive"></div> 
                 <div id="sensorTestTable" class="table-responsive"></div>                                 
             </div>             
@@ -60,6 +75,7 @@
             getAccessToken: getForgeToken
         };
         var documentId = 'urn:' + getUrlParameter('urn');
+        // var documentId = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bGlidXlrcG9xeDh0cmtveW5iYWtkZDFjNmw2ZW93aTBfdHV0b3JpYWxfYnVja2V0L1VORjkucnZ0';
 
         // Run this when the page is loaded
         Autodesk.Viewing.Initializer(options, function onInitialized(){
@@ -77,10 +93,31 @@
                 viewer.autocam.shotParams.destinationPercent = 3;
                 viewer.autocam.shotParams.duration = 3;
 
-                var style3D = "height: 500px; width: 1100px; overflow: hidden;";
-                $('.adsk-viewing-viewer').attr('style', style3D);                
+                calcWindowSize();
             }
         });
+
+        function calcWindowSize() {
+            console.log("calcWindowSize");   
+
+            var style3D = "";
+            /* console.log("Screen: " + window.screen.width + ", " + window.screen.availWidth);
+            console.log("Window: " + document.documentElement.clientWidth + ", " + document.documentElement.clientHeight);
+            console.log("Window inner: " + window.innerWidth + ", " + window.innerHeight); */
+            if(window.innerWidth < 400)
+                style3D = "height: 250px; width: calc(350px); overflow: hidden;";
+            else if(window.innerWidth < 800)
+                style3D = "height: 300px; width: calc(400px); overflow: hidden;";
+            else
+                style3D = "height: 400px; width: calc(1100px); overflow: hidden;";
+            $('.adsk-viewing-viewer').attr('style', style3D); 
+        }
+
+        function clickTableRow(e) {
+            var id = e.target.cellIndex;
+            var text = e.currentTarget.cells[1].outerText;
+            alert(id + ": " + text);
+        }
 
         function renderSensorTable(responseText) {
             var htmlElement = document.getElementById('sensorDataTable');
@@ -106,6 +143,7 @@
                 recValues.push(record.value);               
 
                 var row = document.createElement("tr");
+                row.onclick = clickTableRow;
 
                 for (var j = 0; j < recValues.length; j++)
                 {
@@ -132,9 +170,13 @@
             };
 
             // Create the connection to our API
-            oReq.open("GET", "http://localhost:4000/sensors?limit=20");  // ?limit=10&date=2021
+            oReq.open("GET", "http://192.168.1.66:4000/sensors?limit=20");  // ?limit=10&date=2021
             oReq.setRequestHeader('Content-Type', 'application/json');
             oReq.send();    // Fire the request
+        }
+
+        function downloadSensorData() {
+            alert("Download CSV file");
         }
 
         /**
@@ -148,14 +190,16 @@
             var viewable = doc.getRoot().getDefaultGeometry();
             if (viewable) {
                 viewer.loadDocumentNode(doc, viewable).then(function(result) {
-                    console.log('Viewable Loaded!');
-                    initViewer(viewer);                    
-                    renderSensorData();
-                }).catch(function(err) {
-                    console.log('Viewable failed to load.');
-                    console.log(err);
-                }
-              )
+                        console.log('Viewable Loaded!');
+                        initViewer(viewer);                    
+                        renderSensorData();
+                    }).catch(function(err) {
+                        console.log('Viewable failed to load.');
+                        console.log(err);
+                    }
+                )
+
+                window.addEventListener("resize", calcWindowSize);                                
             }
         }
 
