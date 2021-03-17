@@ -40,7 +40,8 @@ exports.findAll = (req, res) => {
     // ex) http://localhost:4000/sensors?limit=5&date=2021 
     //     req.query.date;
     var query = {};
-    query['$and']=[];
+    if(Object.keys(req.query).length > 0)
+	    query['$and']=[];
     if(typeof req.query.beginDate != 'undefined') {
         query['$and'].push({date: {$gt: req.query.beginDate}});  // {date: {$gt: '2021-2-3-17:32'}}
         console.log('req: ' + req.query.beginDate);
@@ -57,7 +58,6 @@ exports.findAll = (req, res) => {
         query['$and'].push({area: {$eq: req.query.area}});  // {date: {$gt: '2021-2-3-17:32'}}
         console.log('req: ' + req.query.area);
     }
-    console.log('query: ' + query);
 
     try {
         if(typeof req.query.limit != 'undefined') {
