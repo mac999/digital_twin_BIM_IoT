@@ -29,6 +29,9 @@ class PieChart extends DashboardPanelChart {
                     pointBackgroundColor: '#007bff'  
                 }]
             },
+            // responsive: true,             
+            // maintainAspectRatio: false,   
+            // height: 200,                         
             options: {
                 legend: {
                     display: true

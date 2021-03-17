@@ -3,6 +3,7 @@ class DashboardPanel {
     load(parentDivId, divId, viewer) {
         this.divId = divId;
         this.viewer = viewer;
+
         $('#' + parentDivId).append('<div id="' + divId + '" class="dashboardPanel"></div>');
     }
 }
@@ -13,7 +14,7 @@ class DashboardPanelChart extends DashboardPanel {
         divId = this.propertyToUse.replace(/[^A-Za-z0-9]/gi, '') + divId; // div name = property + chart type
         super.load(parentDivId, divId, viewer);
         this.canvasId = divId + 'Canvas';
-        $('#' + divId).append('<canvas id="' + this.canvasId + '" width="400" height="400"></canvas>');
+        $('#' + divId).append('<canvas id="' + this.canvasId + '" width="300" height="150"></canvas>');
         return true;
     }
 

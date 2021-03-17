@@ -18,17 +18,20 @@ class BarChart extends DashboardPanelChart {
         var colors = this.generateColors(3);        
 
         new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['Temp', 'Light', 'Humidity'], 
+                labels: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6', '3/7'], 
                 datasets: [{
-                    data: [1, 2, 3],
+                    data: [25, 30, 31, 35, 28, 32, 33],
                     backgroundColor: colors.background,
                     borderColor: colors.borders,
                     borderWidth: 1,
                     pointBackgroundColor: '#007bff'                    
                 }]
             },
+            // responsive: true,             
+            // maintainAspectRatio: false,   
+            // height: 200,         
             options: {
                 scales: {
                     yAxes: [{

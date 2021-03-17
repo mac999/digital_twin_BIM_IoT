@@ -10,7 +10,8 @@ function alertObject(obj){
 $(document).ready(function () {
     $(document).on('DOMNodeInserted', function (e) {
         if ($(e.target).hasClass('orbit-gizmo')) {
-            new Dashboard(NOP_VIEWER, [new BarChart('Light'), new PieChart('Temp')]);        
+            new Dashboard(NOP_VIEWER, [new BarChart('Temp'), new BarChart('Humidity')]);        
+            new Dashboard(NOP_VIEWER, [new BarChart('Light'), new PieChart('Sensor')]);        
         }
     });
 })
@@ -33,9 +34,11 @@ class Dashboard {
         // columns so it can fit the new dashboard column, also we added a smooth transition css class for a better user experience
         var row = $(".row").children();
         if(row.length > 0)
-            $(row[0]).removeClass('col-sm-7').addClass('col-sm-9 transition-width').after('<div class="col-sm-3 transition-width" id="dashboard"></div>');
-        // $(row[0]).removeClass('col-sm-7').addClass('col-sm-7 transition-width').after('<div class="col-sm-3 transition-width" id="dashboard"></div>');
-        // $(row[1]).removeClass('col-sm-5').addClass('col-sm-2 transition-width');
+        {
+            var dashboard = document.getElementById("dashboard");
+            if(dashboard == null)
+                $(row[0]).removeClass('col-sm-7').addClass('col-sm-8 transition-width').after('<div class="col-sm-4 transition-width" id="dashboard"></div>');
+        }
     }
 
     loadPanels () {
