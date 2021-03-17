@@ -9,6 +9,7 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width"/    
 
     <!-- Third Party package -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -56,11 +57,18 @@
                 <label>Sensor</label>
                 <select id="sensor" class="selectpicker">
                     <option value="all">all</option>
-                    <option value="temperature">temperature</option>
-                    <option value="humidity">humidity</option>
+                    <option value="temp">temperature</option>
+                    <option value="humi">humidity</option>
                     <option value="light">light</option>
                 </select>                     
-
+                <label>Max</label>
+                <select id="maxCount" class="selectpicker">
+                    <option value="all">all</option>
+                    <option value="20">20</option>
+                    <option value="50" selected="selected">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                </select>   
                 <div id="sensorDataTable" class="table-responsive"></div> 
                 <div id="sensorTestTable" class="table-responsive"></div>                                 
             </div>             
@@ -101,15 +109,17 @@
             console.log("calcWindowSize");   
 
             var style3D = "";
-            /* console.log("Screen: " + window.screen.width + ", " + window.screen.availWidth);
-            console.log("Window: " + document.documentElement.clientWidth + ", " + document.documentElement.clientHeight);
-            console.log("Window inner: " + window.innerWidth + ", " + window.innerHeight); */
-            if(window.innerWidth < 400)
-                style3D = "height: 250px; width: calc(350px); overflow: hidden;";
-            else if(window.innerWidth < 800)
-                style3D = "height: 300px; width: calc(400px); overflow: hidden;";
-            else
-                style3D = "height: 400px; width: calc(1100px); overflow: hidden;";
+            console.log("Screen: " + window.screen.width + ", " + window.screen.availWidth);
+            console.log("Window: " + document.documentElement.clientWidth + ", " + document.documentElement.clientHeight); 
+            console.log("Window inner: " + window.innerWidth + ", " + window.innerHeight); 
+            console.log("device pixel unit: " + window.devicePixelRatio);
+            console.log("margin: " + document.body.style.marginRight);
+
+            var pixelRatio = 1; // window.devicePixelRatio || 1;
+            var viewerSize = viewerSize = window.innerWidth * pixelRatio  - 40;
+            if(viewerSize > 1100)
+                viewerSize = 1000;
+            style3D = "height: 400px; width: calc(" + viewerSize + "px); overflow: hidden;";
             $('.adsk-viewing-viewer').attr('style', style3D); 
         }
 
@@ -160,6 +170,12 @@
         }
 
         function renderSensorData() {
+            var beginDate = document.getElementById('beginDate').value;
+            var endDate = document.getElementById('endDate').value;
+            var area = document.getElementById('area').value;
+            var sensor = document.getElementById('sensor').value;
+            var maxCount = document.getElementById('maxCount').value; 
+
             // Create a new ajax requst
             var oReq = new XMLHttpRequest();
 
@@ -170,24 +186,44 @@
             };
 
             // Create the connection to our API
-            oReq.open("GET", "http://192.168.1.66:4000/sensors?limit=20");  // ?limit=10&date=2021
+            var APIstring = "http://localhost:4000/sensors?";
+            APIstring = APIstring + "beginDate=" + beginDate + "&";
+            APIstring = APIstring + "endDate=" + endDate + "&";
+            if(maxCount != "all")
+                APIstring = APIstring + "limit=" + parseInt(maxCount) + "&";
+            if(sensor != "all")
+                APIstring = APIstring + "sensor=" + sensor + "&";
+            if(area != "all")
+                APIstring = APIstring + "area=" + area + "&";
+
+            oReq.open("GET", APIstring);  // ?limit=10&date=2021
             oReq.setRequestHeader('Content-Type', 'application/json');
             oReq.send();    // Fire the request
         }
 
-        var data = [
-           ['ID', 'programmer'],
-           ['P', 'taewook'],
-           ['C1', 'sunwoo'],
-           ['C2', 'yeonsoo']
-        ];
+        var data = [];
           
-        function downloadSensorData() {
-            var csv = 'Name,Title\n';
-            data.forEach(function(row) {
-                    csv += row.join(',');
-                    csv += "\n";
-            });
+        function getSensorData(responseText) {
+            var records = JSON.parse(responseText);
+            for (var i = 0; i < records.length; i++) {
+                var record = records[i];
+
+                var recValues = [];
+                recValues.push(i);
+                recValues.push(record.area);
+                recValues.push(record.sensor);
+                recValues.push(record.date);
+                recValues.push(record.value); 
+
+                data.push(recValues);        
+            }
+
+            var csv = 'ID, Area, Sensor, Date, Value\n';
+            for(var i = 0; i < data.length; i++) {
+                row = data[i];
+                csv += row.join(',');
+                csv += "\n";
+            }
          
             console.log(csv);
             var hiddenElement = document.createElement('a');
@@ -195,6 +231,39 @@
             hiddenElement.target = '_blank';
             hiddenElement.download = 'data.csv';
             hiddenElement.click();
+        }
+
+        function downloadSensorData() {
+            var beginDate = document.getElementById('beginDate').value;
+            var endDate = document.getElementById('endDate').value;
+            var area = document.getElementById('area').value;
+            var sensor = document.getElementById('sensor').value;
+            var maxCount = document.getElementById('maxCount').value; 
+
+            // Create a new ajax requst
+            var oReq = new XMLHttpRequest();
+
+            oReq.onreadystatechange = function ()
+            {
+                if (oReq.readyState == 4 && oReq.status == 200)
+                    getSensorData(oReq.responseText);
+            };
+
+            // Create the connection to our API
+            // Create the connection to our API
+            var APIstring = "http://localhost:4000/sensors?";
+            APIstring = APIstring + "beginDate=" + beginDate + "&";
+            APIstring = APIstring + "endDate=" + endDate + "&";
+            if(maxCount != "all")
+                APIstring = APIstring + "limit=" + parseInt(maxCount) + "&";
+            if(sensor != "all")
+                APIstring = APIstring + "sensor=" + sensor + "&";
+            if(area != "all")
+                APIstring = APIstring + "area=" + area + "&";
+
+            oReq.open("GET", APIstring);  // ?limit=10&date=2021
+            oReq.setRequestHeader('Content-Type', 'application/json');
+            oReq.send();    // Fire the request
         }
 
         /**

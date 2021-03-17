@@ -20,3 +20,8 @@
     // width: 800px;
     position: relative;
 }
+
+.chartjs-render-monitor{
+    // height: 200px !important;
+    // width: 300px;
+}
