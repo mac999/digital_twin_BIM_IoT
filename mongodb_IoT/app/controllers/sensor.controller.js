@@ -40,9 +40,24 @@ exports.findAll = (req, res) => {
     // ex) http://localhost:4000/sensors?limit=5&date=2021 
     //     req.query.date;
     var query = {};
-    if(typeof req.query.date != 'undefined') {
-        query = {date: {$gt: req.query.date}};  // {date: {$gt: '2021-2-3-17:32'}}
+    query['$and']=[];
+    if(typeof req.query.beginDate != 'undefined') {
+        query['$and'].push({date: {$gt: req.query.beginDate}});  // {date: {$gt: '2021-2-3-17:32'}}
+        console.log('req: ' + req.query.beginDate);
     }
+    /* if(typeof req.query.endDate != 'undefined') {
+        query['$and'].push({date: {$lt: req.query.endDate}});  // {date: {$gt: '2021-2-3-17:32'}}
+        console.log('req: ' + req.query.endDate);
+    } */
+    if(typeof req.query.sensor != 'undefined') {
+        query['$and'].push({sensor: {$eq: req.query.sensor}});  // {date: {$gt: '2021-2-3-17:32'}}
+        console.log('req: ' + req.query.sensor);
+    }
+    if(typeof req.query.area != 'undefined') {
+        query['$and'].push({area: {$eq: req.query.area}});  // {date: {$gt: '2021-2-3-17:32'}}
+        console.log('req: ' + req.query.area);
+    }
+    console.log('query: ' + query);
 
     try {
         if(typeof req.query.limit != 'undefined') {
