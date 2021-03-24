@@ -21,14 +21,35 @@
 #define OLED_RESET  -1
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-void setup() {
-  Serial.begin(9600);
-  Serial.println("Sensing");
-
+void initSensor()
+{
+  if (!APDS.begin()) {
+    Serial.println("Error initializing APDS9960 sensor.");
+    while (1); // Stop forever
+  }
+  
+  if (!HTS.begin()) {
+    Serial.println("Failed to initialize humidity temperature sensor!");
+    while (1);
+  }
+  
   if (!IMU.begin()) {
     Serial.println("Failed to initialize IMU!");
     while (1);
   }
+
+  if (!BARO.begin()) {
+    Serial.println("Failed to initialize pressure sensor!");
+    while (1);
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Sensing");
+
+  initSensor();
+
   Serial.print("Gyroscope sample rate = ");
   Serial.print(IMU.gyroscopeSampleRate());
   Serial.println(" Hz");
@@ -53,20 +74,6 @@ void setup() {
   display.setTextColor(SSD1306_WHITE);
   // display.setFont(ArialMT_Plain_10);
 
-  if (!APDS.begin()) {
-      Serial.println("Error initializing APDS9960 sensor.");
-      while (true); // Stop forever
-  }
-
-  if (!HTS.begin()) {
-    Serial.println("Failed to initialize humidity temperature sensor!");
-    while (1);
-  }
-  
-  if (!BARO.begin()) {
-    Serial.println("Failed to initialize pressure sensor!");
-    while (1);
-  }
   testdrawline();      // Draw many lines
 }
 
@@ -93,7 +100,9 @@ void testdrawline() {
 
 void sensingNano(void) {
   display.clearDisplay();
+  initSensor();
 
+  String data = "";
   float temperature = HTS.readTemperature();
   float humidity    = HTS.readHumidity();
   float pressure = BARO.readPressure();
@@ -106,18 +115,20 @@ void sensingNano(void) {
   Serial.print(pressure);
   
   display.setCursor(0, 0);
-  String data = String("THP: ") + String(temperature, 1) + ", " + String(humidity, 1) + ", " + String(pressure, 1);
+  data = String("THP: ") + String(temperature, 1) + ", " + String(humidity, 1) + ", " + String(pressure, 1);
   display.println(data);
 
   // light, RGB
   int proximity = 0;
   if (APDS.proximityAvailable()) {
       proximity = APDS.readProximity();
+      Serial.print("pro ");
   }
 
   int r = 0, g = 0, b = 0;
   if (APDS.colorAvailable()) {
       APDS.readColor(r, g, b);
+      Serial.print("color ");
   }
 
   // print each of the sensor values
