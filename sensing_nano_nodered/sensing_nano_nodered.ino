@@ -23,10 +23,10 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 void initSensor()
 {
-  if (!APDS.begin()) {
+  /* if (!APDS.begin()) {
     Serial.println("Error initializing APDS9960 sensor.");
     while (1); // Stop forever
-  }
+  } */
   
   if (!HTS.begin()) {
     Serial.println("Failed to initialize humidity temperature sensor!");
@@ -120,16 +120,14 @@ void sensingNano(void) {
 
   // light, RGB
   int proximity = 0;
-  if (APDS.proximityAvailable()) {
-      proximity = APDS.readProximity();
-      Serial.print("pro ");
-  }
+  // if (APDS.proximityAvailable()) {
+  //     proximity = APDS.readProximity();
+  // }
 
   int r = 0, g = 0, b = 0;
-  if (APDS.colorAvailable()) {
-      APDS.readColor(r, g, b);
-      Serial.print("color ");
-  }
+  // if (APDS.colorAvailable()) {
+  //     APDS.readColor(r, g, b);
+  // }
 
   // print each of the sensor values
   Serial.print(", ");  
@@ -194,5 +192,5 @@ void sensingNano(void) {
   Serial.println(" ");
 
   display.display();      // Show initial text
-  delay(5000);
+  delay(1000);
 }
