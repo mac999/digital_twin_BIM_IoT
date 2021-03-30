@@ -7,12 +7,14 @@
 
 #include <SPI.h>
 #include <Wire.h>
+// #include <Arduino_APDS9960.h>
+#include <SPI.h>
+#include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <Arduino_LSM9DS1.h>
 #include <Arduino_HTS221.h>
 #include <Arduino_LPS22HB.h>
-#include <Arduino_APDS9960.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
@@ -21,35 +23,14 @@
 #define OLED_RESET  -1
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-void initSensor()
-{
-  /* if (!APDS.begin()) {
-    Serial.println("Error initializing APDS9960 sensor.");
-    while (1); // Stop forever
-  } */
-  
-  if (!HTS.begin()) {
-    Serial.println("Failed to initialize humidity temperature sensor!");
-    while (1);
-  }
-  
-  if (!IMU.begin()) {
-    Serial.println("Failed to initialize IMU!");
-    while (1);
-  }
-
-  if (!BARO.begin()) {
-    Serial.println("Failed to initialize pressure sensor!");
-    while (1);
-  }
-}
-
 void setup() {
   Serial.begin(9600);
   Serial.println("Sensing");
 
-  initSensor();
-
+  if (!IMU.begin()) {
+    Serial.println("Failed to initialize IMU!");
+    while (1);
+  }
   Serial.print("Gyroscope sample rate = ");
   Serial.print(IMU.gyroscopeSampleRate());
   Serial.println(" Hz");
@@ -74,6 +55,21 @@ void setup() {
   display.setTextColor(SSD1306_WHITE);
   // display.setFont(ArialMT_Plain_10);
 
+  if (!HTS.begin()) {
+    Serial.println("Failed to initialize humidity temperature sensor!");
+    while (1);
+  }
+
+  if (!BARO.begin()) {
+    Serial.println("Failed to initialize pressure sensor!");
+    while (1);
+  }
+
+  /* if (!APDS.begin()) {
+    Serial.println("Error initializing APDS9960 sensor.");
+    while (1); // Stop forever
+  } */
+    
   testdrawline();      // Draw many lines
 }
 
@@ -100,9 +96,7 @@ void testdrawline() {
 
 void sensingNano(void) {
   display.clearDisplay();
-  initSensor();
 
-  String data = "";
   float temperature = HTS.readTemperature();
   float humidity    = HTS.readHumidity();
   float pressure = BARO.readPressure();
@@ -113,9 +107,9 @@ void sensingNano(void) {
   Serial.print(humidity);
   Serial.print(", ");
   Serial.print(pressure);
-  
-  display.setCursor(0, 0);
-  data = String("THP: ") + String(temperature, 1) + ", " + String(humidity, 1) + ", " + String(pressure, 1);
+
+  display.setCursor(0, 24);
+  String data = String("THP: ") + String(temperature, 1) + ", " + String(humidity, 1) + ", " + String(pressure, 1);
   display.println(data);
 
   // light, RGB
@@ -139,10 +133,10 @@ void sensingNano(void) {
   Serial.print(", ");
   Serial.print(b);
 
-  display.setCursor(0, 8);
-  data = String("L: ") + String(proximity, DEC) + ", " + String(r, DEC) + ", " + String(g, DEC) + ", " + String(b, DEC);
-  display.println(data);
-  
+  // display.setCursor(0, 8);
+  // data = String("L: ") + String(proximity, DEC) + ", " + String(r, DEC) + ", " + String(g, DEC) + ", " + String(b, DEC);
+  // display.println(data);
+
   float x, y, z;
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(x, y, z);
@@ -154,7 +148,7 @@ void sensingNano(void) {
     Serial.print(", ");
     Serial.print(z);
 
-    display.setCursor(0, 16);
+    display.setCursor(0, 0);
     String data = String("G: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);
   }
@@ -169,7 +163,7 @@ void sensingNano(void) {
     Serial.print(", ");
     Serial.print(z);
 
-    display.setCursor(0, 24);
+    display.setCursor(0, 8);
     String data = String("A: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);    
   }
@@ -184,7 +178,7 @@ void sensingNano(void) {
     Serial.print(", ");
     Serial.print(z);
 
-    display.setCursor(0, 32);
+    display.setCursor(0, 16);
     String data = String("M: ") + String(x, 1) + ", " + String(y, 1) + ", " + String(z, 1);
     display.println(data);       
   }
@@ -192,5 +186,5 @@ void sensingNano(void) {
   Serial.println(" ");
 
   display.display();      // Show initial text
-  delay(1000);
+  delay(500);
 }
