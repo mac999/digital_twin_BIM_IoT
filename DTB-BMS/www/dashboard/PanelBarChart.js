@@ -17,12 +17,14 @@ class BarChart extends DashboardPanelChart {
         var ctx = canvas.getContext("2d");
         var colors = this.generateColors(3);        
 
+        var historyData = getSensorHistoryValue(currentArea, this.propertyToUse);
+
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6', '3/7'], 
+                labels: historyData[0], // ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6', '3/7'], 
                 datasets: [{
-                    data: [25, 30, 31, 35, 28, 32, 33],
+                    data: historyData[1], // [25, 30, 31, 35, 28, 32, 33],
                     backgroundColor: colors.background,
                     borderColor: colors.borders,
                     borderWidth: 1,
@@ -44,6 +46,8 @@ class BarChart extends DashboardPanelChart {
                     display: false
                 },
                 'onClick': function (evt, item) {
+                    alert("click");
+                    resize();
                     // _this.viewer.isolate(_this.modelData.getIds(_this.propertyToUse, item[0]._model.label));
                 }
             }

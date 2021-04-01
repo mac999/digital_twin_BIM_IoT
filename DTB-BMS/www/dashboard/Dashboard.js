@@ -10,8 +10,8 @@ function alertObject(obj){
 $(document).ready(function () {
     $(document).on('DOMNodeInserted', function (e) {
         if ($(e.target).hasClass('orbit-gizmo')) {
-            new Dashboard(NOP_VIEWER, [new BarChart('Temp'), new BarChart('Humidity')]);        
-            new Dashboard(NOP_VIEWER, [new BarChart('Light'), new PieChart('Sensor')]);        
+            var dash1 = new Dashboard(NOP_VIEWER, [new BarChart('temp'), new BarChart('humi')]);        
+            var dash2 = new Dashboard(NOP_VIEWER, [new BarChart('light'), new PieChart('all')]);                      
         }
     });
 })
@@ -48,5 +48,11 @@ class Dashboard {
             panel.load('dashboard', viewer);
         });        
     }
+
+    static invalidate() {
+        // var canvas = document.getElementById('canvas'),
+        // context = canvas.getContext('2d');
+    }
 }
 
+window.Dashboard = Dashboard;

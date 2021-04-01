@@ -30,6 +30,8 @@
     <script src="./dashboard/DashboardPanel.js"></script>
     <script src="./dashboard/PanelBarChart.js"></script>
     <script src="./dashboard/PanelPieChart.js"></script> 
+    <script type="module" src="./Viewer.Toolkit.js"></script>
+    <script type="module" src="./Calc.Util.js"></script>    
 </head>
 
 <body>
@@ -61,22 +63,35 @@
                     <option value="humi">humidity</option>
                     <option value="light">light</option>
                 </select>                     
-                <label>Max</label>
+                <label>Max data</label>
                 <select id="maxCount" class="selectpicker">
                     <option value="all">all</option>
                     <option value="20">20</option>
                     <option value="50" selected="selected">50</option>
                     <option value="100">100</option>
                     <option value="200">200</option>
-                </select>   
-                <div id="sensorDataTable" class="table-responsive"></div> 
-                <div id="sensorTestTable" class="table-responsive"></div>                                 
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>  
+                    <option value="10000">10000</option>                                                         
+                </select> 
+                <label>Visualize</label>
+                <select id="viz" class="selectpicker" onchange="selectViz()">
+                    <option value="none">none</option>
+                    <option value="all">all</option>
+                    <option value="temp">temperature</option>
+                    <option value="humi">humidity</option>
+                    <option value="light">light</option>
+                </select>                   
+                <div id="sensorDataTableDiv" class="table-responsive"></div>
             </div>             
         </div>
     </div>
 
-    <script type="text/javascript">
+    <script type="text/javascript">       
+        // import {ViewerToolkit} from "./Viewer.Toolkit.js";
+
         var viewer;
+        var currentArea;
         var options = {
             env: 'AutodeskProduction',
             api: 'derivativeV2', // TODO: for models uploaded to EMEA change this option to 'derivativeV2_EU'
@@ -96,6 +111,9 @@
                 viewer.start();
 
                 window.NOP_VIEWER = viewer;
+                currentArea = "all";
+                window.currentArea = currentArea;
+
                 // Load the document into the viewer.
                 Autodesk.Viewing.Document.load(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
                 viewer.autocam.shotParams.destinationPercent = 3;
@@ -109,11 +127,11 @@
             console.log("calcWindowSize");   
 
             var style3D = "";
-            console.log("Screen: " + window.screen.width + ", " + window.screen.availWidth);
+            /* console.log("Screen: " + window.screen.width + ", " + window.screen.availWidth);
             console.log("Window: " + document.documentElement.clientWidth + ", " + document.documentElement.clientHeight); 
             console.log("Window inner: " + window.innerWidth + ", " + window.innerHeight); 
             console.log("device pixel unit: " + window.devicePixelRatio);
-            console.log("margin: " + document.body.style.marginRight);
+            console.log("margin: " + document.body.style.marginRight); */
 
             var pixelRatio = 1; // window.devicePixelRatio || 1;
             var viewerSize = viewerSize = window.innerWidth * pixelRatio  - 40;
@@ -126,14 +144,88 @@
         function clickTableRow(e) {
             var id = e.target.cellIndex;
             var text = e.currentTarget.cells[1].outerText;
-            alert(id + ": " + text);
+            window.currentArea = String(text);
+
+            alert(text);
+        }
+
+        // visualize dataset
+        var visualizeSelect = "";
+
+        function selectViz() {
+            var viz = document.getElementById('viz');
+            var selection = viz.value;
+            console.log('You selected: ${selection}');
+            visualizeData(selection);
+        }
+
+        function resetRoomColor() {
+            let color = new THREE.Vector4(0.7, 0.7, 0.7, 1);
+            NOP_VIEWER.setThemingColor(null, color, null, true);  
+            NOP_VIEWER.impl.invalidate(true, true, false);
+        }
+
+        function visualizeRoomData(propData) {
+            console.log(propData);            
+            var value = getSensorTableValue(propData.name, visualizeSelect, 'max');
+
+            let color = null;
+            if(visualizeSelect == "temp")
+                color = new THREE.Vector4(value[1], 0, 0, 1.0);
+            else if(visualizeSelect == "humi")
+                color = new THREE.Vector4(0, 0, value[1], 1.0);
+            else // if(visualizeSelect == "light")
+                color = new THREE.Vector4(value[1], value[1], 0, 1.0);
+
+            NOP_VIEWER.setThemingColor(propData.dbId, color, null, true);   // roomName == "OFFICE 1204"
+        }
+
+        var roomProperties = [];
+        function visualizeData(sel) {
+            resetRoomColor();
+            visualizeSelect = sel;
+            roomProperties = [];
+            if(sel == 'none' || sel == 'all') {
+                return;
+            }
+
+            NOP_VIEWER.search('Solid', function (idArray) {
+                console.log('Solid numbers in this floor:' + idArray.length);
+    
+                $.each(idArray, function(num, dbid) {
+                        var parentId = NOP_VIEWER.model.getData().instanceTree.getNodeParentId(dbid);
+
+                        NOP_VIEWER.getProperties(parentId, function(propData) {
+                            //check if this room is from specific floor
+                            var findRoom = propData.properties.filter(function(item) {
+                                    if(item.displayName == "Type")
+                                        if(item.displayValue == "룸" || item.displayValue == "Room")
+                                            return true;
+                                    return false; 
+                                });
+
+                            if(findRoom.length) {
+                                NOP_VIEWER.model.getProperties(propData.dbId, function(result) {
+                                    if (result.properties) {
+                                        roomProperties.push(result);
+
+                                        visualizeRoomData(result);
+                                        return;
+                                    }
+                                    return;
+                                });
+                            }
+                        });
+                    });
+            });
         }
 
         function renderSensorTable(responseText) {
-            var htmlElement = document.getElementById('sensorDataTable');
+            var htmlElement = document.getElementById('sensorDataTableDiv');
             htmlElement.innerHTML = '';
 
             var table = document.createElement("table");
+            table.setAttribute("id", "sensorDataTable");
             table.setAttribute("class", "table table-striped table-sm table-responsive");
 
             var head = "<thead><tr><th>No</th><th>Area</th><th>Sensor</th><th>Time</th><th>Value</th></tr></thead>";
@@ -146,11 +238,14 @@
                 var record = records[i];
 
                 var recValues = [];
-                recValues.push(i);
+                recValues.push(i + 1);
                 recValues.push(record.area);
                 recValues.push(record.sensor);
                 recValues.push(record.date);
-                recValues.push(record.value);               
+                recValues.push(record.value);   
+
+                if(i == 0)
+                    window.currentArea = String(record.area);
 
                 var row = document.createElement("tr");
                 row.onclick = clickTableRow;
@@ -167,6 +262,8 @@
             } 
             table.appendChild(tbody);
             htmlElement.appendChild(table);
+
+            Dashboard.invalidate();        
         }
 
         function renderSensorData() {
@@ -309,11 +406,15 @@
             if (event.dbIdArray.length === 1) {
                 viewer.getProperties(event.dbIdArray[0], function(data) {
                     console.log(data.name);
-                    if(data.name.indexOf("Column") >= 0)
+                    if(data.name.indexOf("Solid") >= 0)
                     {
                         var instanceTree = viewer.model.getData().instanceTree;
                         var parentId = instanceTree.getNodeParentId(event.dbIdArray[0])
                         viewer.select([parentId]);
+                        console.log("parent = " + parentId + ", Solid = " + event.dbIdArray[0]);
+
+                        // let color = new THREE.Vector4(0, 0, 1, 1);
+                        // NOP_VIEWER.setThemingColor(event.dbIdArray[0], color, NOP_VIEWER.model);      
                     }
                 });
             }
