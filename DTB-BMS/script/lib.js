@@ -61,3 +61,21 @@ function renderTest() {
         CreateTable();
     }
 }
+
+function callbackKitten(err, data) {
+    console.log('kitti');
+    console.log(data);
+}
+
+function saveMongodbTest() {
+    const kittySchema = new mongoose.Schema({
+      name: String
+    });
+    const Kitten = mongoose.model('Kitten', kittySchema);
+    const silence = new Kitten({ name: 'Silence' });
+    const fluffy = new Kitten({ name: 'fluffy' });
+    silence.save(function (err, fluffy) { });
+    fluffy.save(function (err, fluffy) { });
+
+    await Kitten.find({ name: /^fluff/ }, callbackKitten);
+}
