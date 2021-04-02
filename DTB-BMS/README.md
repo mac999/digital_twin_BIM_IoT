@@ -13,6 +13,13 @@
 # Description
 In this DTB-BMS(Digital Twin and BIM based Building Management System), we will be creating a simple web page that allows end users to upload some files to Forge storage service, then translate them and display them in a web browser.
 
+- IoT dataset visualization
+- IoT-BIM connnection
+- Sensing and collecting IoT data 
+- Querying IoT dataset with range, type
+- Download EXCEL csv file from IoT dataset
+- Support MongoDB and node-red
+- Save dataset from Arduino Nano Sense 33 BLE
 - Authenticate your developer identity
 - Create a bucket
 - Get bucket detail
@@ -102,6 +109,9 @@ Click on the `Authorize me` link and then click through the links on the browser
 
 # License
 This sample is licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT). Please see the [LICENSE](LICENSE) file for full details.
+
+# devleoper
+<a href = "https://sites.google.com/site/bimprinciple/our-company/interests">Taewook Kang (laputa99999@gmail.com)</a>
 
 # Support
 laputa99999@gmail.com
