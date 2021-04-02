@@ -82,7 +82,7 @@
                     <option value="humi">humidity</option>
                     <option value="light">light</option>
                 </select>                   
-                <div id="sensorDataTableDiv" class="table-responsive"></div>
+                <div id="sensorDataTableDiv" class="table-responsive" style="height:calc(100vh - 70vh);overflow:auto;"></div>
             </div>             
         </div>
     </div>
@@ -146,7 +146,8 @@
             var text = e.currentTarget.cells[1].outerText;
             window.currentArea = String(text);
 
-            alert(text);
+            for(var i = 0; i < dashboardObjects.length; i++)
+                dashboardObjects[i].updateData();
         }
 
         // visualize dataset
@@ -261,9 +262,7 @@
                 tbody.appendChild(row);
             } 
             table.appendChild(tbody);
-            htmlElement.appendChild(table);
-
-            Dashboard.invalidate();        
+            htmlElement.appendChild(table);       
         }
 
         function renderSensorData() {
@@ -388,16 +387,23 @@
         }
 
         function initViewer(viewer) {
-            // viewer.setQualityLevel(/* ambient shadows */ false, /* antialiasing */ true);
             viewer.setGroundShadow(true);
             viewer.setGroundReflection(false);
             viewer.setGhosting(true);
-            viewer.setEnvMapBackground(true);
-            viewer.setLightPreset(5);
+            viewer.setEnvMapBackground(false);
+            viewer.setLightPreset(6);
             viewer.setSelectionColor(new THREE.Color(0xEBB30B));
-            // viewer.loadExtension("NestedViewerExtension", { filter: ["2d"], crossSelection: true });
- 
             viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT, onSelectionChanged);
+            // viewer.setQualityLevel(/* ambient shadows */ false, /* antialiasing */ true);
+            // viewer.loadExtension("NestedViewerExtension", { filter: ["2d"], crossSelection: true });            
+        }
+
+        function setCamera(distance) {
+            var direction = new THREE.Vector3();
+            var camera = viewer.getCamera();
+            camera.getWorldDirection( direction );
+            camera.position.add( direction.multiplyScalar(distance)); //set distance move the camera forward to your needs
+            viewer.navigation.setView(camera.position,viewer.navigation.getTarget())
         }
 
         function onSelectionChanged(event) {
