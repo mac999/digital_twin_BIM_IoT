@@ -1,4 +1,3 @@
-// Dashboard panel base
 class DashboardPanel {
     load(parentDivId, divId, viewer) {
         this.divId = divId;
@@ -6,9 +5,11 @@ class DashboardPanel {
 
         $('#' + parentDivId).append('<div id="' + divId + '" class="dashboardPanel"></div>');
     }
+
+    updateData() {
+    }        
 }
 
-// Dashboard panels for charts
 class DashboardPanelChart extends DashboardPanel {
     load(parentDivId, divId, viewer) {
         divId = this.propertyToUse.replace(/[^A-Za-z0-9]/gi, '') + divId; // div name = property + chart type
@@ -27,5 +28,9 @@ class DashboardPanelChart extends DashboardPanel {
         }
         return { background: background, borders: borders };
     }
+
+    updateData() {
+        super.updateData();
+    }    
 }
 

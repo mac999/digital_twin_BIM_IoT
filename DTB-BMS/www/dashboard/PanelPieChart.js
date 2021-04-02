@@ -17,7 +17,7 @@ class PieChart extends DashboardPanelChart {
         var ctx = canvas.getContext("2d");
         var colors = this.generateColors(3);        
 
-        new Chart(ctx, {
+        this.chart = new Chart(ctx, {
             type: 'doughnut',      
             data: {
                 labels: ['Temp', 'Light', 'Humidity'],

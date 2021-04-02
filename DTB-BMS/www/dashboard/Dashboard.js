@@ -1,4 +1,12 @@
+// Title: DTB-BMS(Digital Twin and BIM based Building Management System)
+// Name: Taewook Kang
+// Email: laputa99999@gmail.com
+// Created date: 2021.2.2
+// Tools: Autodesk Forge, node, mongodb, axios, javascript
+//
 // Handles the Dashboard panels
+var dashboardObjects = [];
+
 function alertObject(obj){      
     msg = "";
     for(var key in obj) {
@@ -11,7 +19,10 @@ $(document).ready(function () {
     $(document).on('DOMNodeInserted', function (e) {
         if ($(e.target).hasClass('orbit-gizmo')) {
             var dash1 = new Dashboard(NOP_VIEWER, [new BarChart('temp'), new BarChart('humi')]);        
-            var dash2 = new Dashboard(NOP_VIEWER, [new BarChart('light'), new PieChart('all')]);                      
+            var dash2 = new Dashboard(NOP_VIEWER, [new BarChart('light'), new PieChart('all')]);
+            dashboardObjects = [];   
+            dashboardObjects.push(dash1);
+            dashboardObjects.push(dash2);                               
         }
     });
 })
@@ -49,10 +60,14 @@ class Dashboard {
         });        
     }
 
-    static invalidate() {
-        // var canvas = document.getElementById('canvas'),
-        // context = canvas.getContext('2d');
+    updateData() {
+        var _this = this;
+        _this._panels.forEach(function (panel) {
+            // let's create a DIV with the Panel Function name and load it
+            panel.updateData();
+        });  
     }
 }
 
 window.Dashboard = Dashboard;
+window.dashboardObjects = dashboardObjects;
