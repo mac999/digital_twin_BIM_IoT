@@ -29,14 +29,14 @@ In this DTB-BMS(Digital Twin and BIM based Building Management System), we will 
 - Display the file in a web browser
 
 <p align="center">
-  <img height="300px" src="https://1.bp.blogspot.com/-HW_8OxVL-is/YGc5rrtJCVI/AAAAAAAA5s8/whBxss4XrsotQgnrWcNBjbql8yQKnqMMQCLcBGAsYHQ/s320/a3.JPG">
-  <img height="300px" src="https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s1919/a1.JPG">
-  <img height="300px" src="https://1.bp.blogspot.com/-swdoS-w7MLY/YGcvuGJd0xI/AAAAAAAA5sw/BiRTxHJRaFgOpKrkv9soVYFrnBaX4HPkgCLcBGAsYHQ/s1920/a2.JPG">
+  <img width="400px" src="https://1.bp.blogspot.com/-HW_8OxVL-is/YGc5rrtJCVI/AAAAAAAA5s8/whBxss4XrsotQgnrWcNBjbql8yQKnqMMQCLcBGAsYHQ/s1877/a3.JPG">
+  <img width="400px" src="https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s1919/a1.JPG">
+  <img width="400px" src="https://1.bp.blogspot.com/-swdoS-w7MLY/YGcvuGJd0xI/AAAAAAAA5sw/BiRTxHJRaFgOpKrkv9soVYFrnBaX4HPkgCLcBGAsYHQ/s1920/a2.JPG">
   <br/>
   <b>DTB-BMS screen</b>
 </p>
 <p align="center">
-  <a href="https://youtu.be/vpp4oGP3DPI"><img height="300px" src="https://1.bp.blogspot.com/-OaqpSj6oYKU/YAsUJdbsIFI/AAAAAAAA5Bk/phBaKOy4F1YkVEIOJQ0UNcntFLqNXd0oACLcBGAsYHQ/w400-h300/KakaoTalk_20210122_130552110.jpg"/></a>
+  <a href="https://youtu.be/vpp4oGP3DPI"><img width="400px" src="https://1.bp.blogspot.com/-OaqpSj6oYKU/YAsUJdbsIFI/AAAAAAAA5Bk/phBaKOy4F1YkVEIOJQ0UNcntFLqNXd0oACLcBGAsYHQ/w400-h300/KakaoTalk_20210122_130552110.jpg"/></a>
   <br/>  
   <b>DTB-BMS sensor data</b>
 </p>
