@@ -1,3 +1,17 @@
+function addData(chart, label, data) {
+    chart.data.labels = label;
+    chart.data.datasets[0].data = data;
+    chart.update();
+}
+
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+}
+
 class BarChart extends DashboardPanelChart {
     constructor(property) {
         super();
@@ -46,8 +60,10 @@ class BarChart extends DashboardPanelChart {
                     display: false
                 },
                 'onClick': function (evt, item) {
-                    alert("click");
-                    resize();
+                    var chart = this.chart;
+                    var sensor = this.canvas.id.substring(0, 4);
+                    var historyData = getSensorHistoryValue(currentArea, sensor);
+                    addData(chart, historyData[0], historyData[1]);
                     // _this.viewer.isolate(_this.modelData.getIds(_this.propertyToUse, item[0]._model.label));
                 }
             }
