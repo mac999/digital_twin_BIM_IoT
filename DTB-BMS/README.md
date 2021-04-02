@@ -21,6 +21,8 @@ In this DTB-BMS(Digital Twin and BIM based Building Management System), we will 
 - Translate the file to the SVF format
 - Display the file in a web browser
 
+![alt text](https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s320/a1.JPG)
+
 # Setup
 
 ## Prerequisites
