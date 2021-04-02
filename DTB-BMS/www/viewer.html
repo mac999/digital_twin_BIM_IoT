@@ -88,6 +88,12 @@
     </div>
 
     <script type="text/javascript">       
+        // Title: DTB-BMS(Digital Twin and BIM based Building Management System)
+        // Name: Taewook Kang
+        // Email: laputa99999@gmail.com
+        // Created date: 2021.2.2
+        // Tools: Autodesk Forge, node, mongodb, axios, javascript
+        //
         // import {ViewerToolkit} from "./Viewer.Toolkit.js";
 
         var viewer;
@@ -400,27 +406,34 @@
 
         function setCamera(distance) {
             var direction = new THREE.Vector3();
-            var camera = viewer.getCamera();
+            var camera = NOP_VIEWER.getCamera();
             camera.getWorldDirection( direction );
             camera.position.add( direction.multiplyScalar(distance)); //set distance move the camera forward to your needs
-            viewer.navigation.setView(camera.position,viewer.navigation.getTarget())
+            NOP_VIEWER.navigation.setView(camera.position, NOP_VIEWER.navigation.getTarget())
         }
 
         function onSelectionChanged(event) {
             // Let's only control selection in case of
             // single user selection
             if (event.dbIdArray.length === 1) {
-                viewer.getProperties(event.dbIdArray[0], function(data) {
+                NOP_VIEWER.getProperties(event.dbIdArray[0], function(data) {
                     console.log(data.name);
                     if(data.name.indexOf("Solid") >= 0)
                     {
-                        var instanceTree = viewer.model.getData().instanceTree;
+                        var instanceTree = NOP_VIEWER.model.getData().instanceTree;
                         var parentId = instanceTree.getNodeParentId(event.dbIdArray[0])
-                        viewer.select([parentId]);
+                        NOP_VIEWER.select([parentId]);
                         console.log("parent = " + parentId + ", Solid = " + event.dbIdArray[0]);
 
-                        // let color = new THREE.Vector4(0, 0, 1, 1);
-                        // NOP_VIEWER.setThemingColor(event.dbIdArray[0], color, NOP_VIEWER.model);      
+                        NOP_VIEWER.model.getProperties(parentId, function(result) {
+                            if (result.properties) {
+                                currentArea = result.name;
+                                for(var i = 0; i < dashboardObjects.length; i++)
+                                    dashboardObjects[i].updateData();
+                                return;
+                            }
+                            return;
+                        });  
                     }
                 });
             }
