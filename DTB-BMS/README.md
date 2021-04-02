@@ -23,7 +23,7 @@ In this DTB-BMS(Digital Twin and BIM based Building Management System), we will 
 
 <p align="center">
   <img height="300px" src="https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s1919/a1.JPG">
-  <img height="300px" src="https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s1919/a2.JPG">
+  <img height="300px" src="https://1.bp.blogspot.com/-swdoS-w7MLY/YGcvuGJd0xI/AAAAAAAA5sw/BiRTxHJRaFgOpKrkv9soVYFrnBaX4HPkgCLcBGAsYHQ/s1920/a2.JPG">
   <br/>
   <b>DTB-BMS screen</b>
 </p>
