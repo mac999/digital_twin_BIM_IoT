@@ -22,6 +22,8 @@ In this DTB-BMS(Digital Twin and BIM based Building Management System), we will 
 - Display the file in a web browser
 
 ![alt text](https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s320/a1.JPG)
+![alt text](https://1.bp.blogspot.com/-swdoS-w7MLY/YGcvuGJd0xI/AAAAAAAA5sw/BiRTxHJRaFgOpKrkv9soVYFrnBaX4HPkgCLcBGAsYHQ/s320/a2.JPG)
+<img align="left" width="600" height="200" src="https://1.bp.blogspot.com/-swdoS-w7MLY/YGcvuGJd0xI/AAAAAAAA5sw/BiRTxHJRaFgOpKrkv9soVYFrnBaX4HPkgCLcBGAsYHQ/s320/a2.JPG">
 
 # Setup
 
