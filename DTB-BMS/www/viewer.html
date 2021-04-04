@@ -143,8 +143,11 @@
             var viewerSize = viewerSize = window.innerWidth * pixelRatio  - 40;
             if(viewerSize > 1100)
                 viewerSize = 1000;
-            style3D = "height: 400px; width: calc(" + viewerSize + "px); overflow: hidden;";
+            // style3D = "height: 400px; width: calc(" + viewerSize + "px); overflow: hidden;";
+            style3D = "height: 55vh; width: 70vw; overflow: hidden;";
             $('.adsk-viewing-viewer').attr('style', style3D); 
+
+            NOP_VIEWER.resize();
         }
 
         function clickTableRow(e) {
