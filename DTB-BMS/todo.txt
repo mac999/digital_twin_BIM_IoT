@@ -1,5 +1,0 @@
-2021/3/2
-1. As draft version, there are incomplated issues. 
-2. ID of mongo db IoT records
-3. find query with ID
-4. N-screen supports 
