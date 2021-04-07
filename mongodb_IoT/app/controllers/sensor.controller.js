@@ -47,11 +47,11 @@ exports.findAll = (req, res) => {
 	    	query['$and']=[];
 
     if(typeof req.query.beginDate != 'undefined') {
-        query['$and'].push({date: {$gt: req.query.beginDate}});  // {date: {$gt: '2021-2-3-17:32'}}
+        query['$and'].push({date: {$gte: ISODate(req.query.beginDate)}});  // {date: {$gt: '2021-2-3-17:32'}}
         console.log('req: ' + req.query.beginDate);
     }
     /* if(typeof req.query.endDate != 'undefined') {
-        query['$and'].push({date: {$lt: req.query.endDate}});  // {date: {$gt: '2021-2-3-17:32'}}
+        query['$and'].push({date: {$lte: ISODate(req.query.endDate)}});  // {date: {$gt: '2021-2-3-17:32'}}
         console.log('req: ' + req.query.endDate);
     } */
     if(typeof req.query.sensor != 'undefined') {
