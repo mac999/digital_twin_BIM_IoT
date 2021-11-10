@@ -7,6 +7,9 @@ module.exports = (app) => {
     // Retrieve all sensors
     app.get('/sensors', sensors.findAll);
 
+    // Retrieve all sensors
+    app.get('/summary', sensors.summary);
+
     // Retrieve a single sensor with sensorId
     app.get('/sensors/:sensorId', sensors.findOne);
 
