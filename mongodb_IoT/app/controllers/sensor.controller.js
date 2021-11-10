@@ -34,17 +34,16 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve and return all records from the database.
-exports.findAll = (req, res) => {
-    console.log(req.query);
+function parsingQuery(req) {
     // ex) http://localhost:4000/sensors?limit=5&beginDate=2021 
-    //     req.query.date;
+    //     req.query.date; 
+    console.log(req.query);   
     var query = {};
     if(Object.keys(req.query).length > 0)
-    	if(Object.keys(req.query).length == 1 && typeof req.query.limit != 'undefined')
-	    	;
-	    else 
-	    	query['$and']=[];
+        if(Object.keys(req.query).length == 1 && typeof req.query.limit != 'undefined')
+            ;
+        else 
+            query['$and']=[];
 
     if(typeof req.query.beginDate != 'undefined') {
         query['$and'].push({date: {$gte: ISODate(req.query.beginDate)}});  // {date: {$gt: '2021-2-3-17:32'}}
@@ -63,11 +62,88 @@ exports.findAll = (req, res) => {
         console.log('req: ' + req.query.area);
     }
     console.log(query);
+    return query;
+}
+
+function dumpRecords(records)
+{
+    console.log(records);
+    for(var i = 0; i < records.length; i++) {
+        console.log(records[i].area);                    
+        console.log(records[i].sensor);
+        console.log(records[i].date);
+        console.log(records[i].value);
+    } 
+}
+
+function summaryRecords(records)
+{
+    var results = [];
+    if(records.length < 1)
+        return results;
+
+    var summary = {
+        _id: 0,
+        area: "",
+        sensor: "",
+        date: "",
+        value: 0, // average
+        total: 0,
+        max: 0, 
+        min: 0
+    };
+    results[0] = summary;
+    for(var i = 0; i < records.length; i++) {
+        results[0].area = results[0].area + ", " + records[i].area;         
+        results[0].sensor = results[0].sensor + ", " + records[i].sensor;
+        results[0].total = results[0].total + records[i].value;
+        if(results[0].min > records[i].value)
+            results[0].min = records[i].value;
+        if(results[0].max < records[i].value)
+            results[0].max = records[i].value;
+    } 
+    results[0].value = results[0].total / records.length;
+
+    return results;
+}
+
+// Retrieve and return all records from the database.
+exports.findAll = (req, res) => {
+    var query = parsingQuery(req);
 
     try {
         if(typeof req.query.limit != 'undefined') {
             Record.find(query).sort({_id:-1}).limit(parseInt(req.query.limit)).then(records => {
+                res.send(records);              
+            });
+        }
+        else {
+            Record.find(query).sort({_id:-1}).then(records => {
                 res.send(records);
+            });
+        }
+    }
+    catch(err) {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving Record."
+        });
+    }
+};
+
+// Retrieve and return all records from the database.
+exports.summary = (req, res) => {
+    // http://localhost:4000/summary?limit=10&area=OFFICE%201204
+    console.log('summary');
+    var query = parsingQuery(req);
+
+    try {
+        if(typeof req.query.limit != 'undefined') {
+            Record.find(query).sort({_id:-1}).limit(parseInt(req.query.limit)).then(records => {
+                // res.send(records);
+                summary = summaryRecords(records);
+                res.send(summary);
+
+                dumpRecords(records);                 
             });
         }
         else {
