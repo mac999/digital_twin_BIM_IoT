@@ -1,7 +1,0 @@
-Running: xsim.dir/coffee_machine_tb_behav/xsimk.exe -simmode gui -wdb coffee_machine_tb_behav.wdb -simrunnum 0 -socket 51075
-Design successfully loaded
-Design Loading Memory Usage: 9008 KB (Peak: 9008 KB)
-Design Loading CPU Usage: 93 ms
-Simulation completed
-Simulation Memory Usage: 9892 KB (Peak: 9892 KB)
-Simulation CPU Usage: 93 ms
