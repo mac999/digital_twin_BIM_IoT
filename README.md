@@ -2,8 +2,8 @@
 Digital Twin based Building Environment Monitoring using BIM, IoT, AI
 <p align="center">
   <img height="200px" src="https://1.bp.blogspot.com/-HW_8OxVL-is/YGc5rrtJCVI/AAAAAAAA5s8/whBxss4XrsotQgnrWcNBjbql8yQKnqMMQCLcBGAsYHQ/s1877/a3.JPG"> <br/>
-  <img height="170px" src="https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s1919/a1.JPG"> 
-  <img height="170px" src="https://1.bp.blogspot.com/-swdoS-w7MLY/YGcvuGJd0xI/AAAAAAAA5sw/BiRTxHJRaFgOpKrkv9soVYFrnBaX4HPkgCLcBGAsYHQ/s1920/a2.JPG"><br/>
+  <img height="160px" src="https://1.bp.blogspot.com/-AQWyAX1csp4/YGcvuBbsDcI/AAAAAAAA5ss/lFaR-u5pjEwr6pOce1ayvQO_Ktzx9i6TwCLcBGAsYHQ/s1919/a1.JPG"> 
+  <img height="160px" src="https://1.bp.blogspot.com/-swdoS-w7MLY/YGcvuGJd0xI/AAAAAAAA5sw/BiRTxHJRaFgOpKrkv9soVYFrnBaX4HPkgCLcBGAsYHQ/s1920/a2.JPG"><br/>
   <b>demonstration</b>
 </p>
 <p align="center">
