@@ -1,9 +1,0 @@
-SCC = This is a Source Code Control file
-
-[CauFEM.dsp]
-SCC_Aux_Path = "\\Pavement\HeartCM\"
-SCC_Project_Name = "$/HeartProject/CauFEM", SEAAAAAA
-
-[CauFEM.dsw]
-SCC_Aux_Path = "\\Pavement\HeartCM\"
-SCC_Project_Name = "$/HeartProject/CauFEM", SEAAAAAA
