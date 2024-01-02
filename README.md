@@ -24,6 +24,7 @@ This project includes like below.
 > Anomaly detection based on environmantal data pattern using deep learing<br/>
 > Visualize monitoring dataaset based on Web<br/>
 > Develop RESTful API<br/>
+> Develop anomaly detection model using deep learning</br>
 In reference, this source code shows how to use Autodesk Forge, Node red, Arduino BLE sense, Mongo DB, node.js.<br/>
 
 # License
