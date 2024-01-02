@@ -15,13 +15,13 @@ Digital Twin based Building Environment Monitoring using BIM, IoT, AI
 # Description
 This R&D project(2021) has the purpose of developing the simple prototype related to Digital Twin based Building Environment Monitoring using BIM, IoT, AI.</br>
 This project includes like below. 
-> Digital Twin concpet implimentation
-> Open source based digital twin development method
-> Connection dataset between BIM and IoT
-> Anomaly detection based on environmantal data pattern using deep learing
-> Visualize monitoring dataaset based on Web
-> Develop RESTful API
-In reference, this source code shows how to use Autodesk Forge, Node red, Arduino BLE sense, Mongo DB, node.js.
+> Digital Twin concpet implimentation<br/>
+> Open source based digital twin development method<br/>
+> Connection dataset between BIM and IoT<br/>
+> Anomaly detection based on environmantal data pattern using deep learing<br/>
+> Visualize monitoring dataaset based on Web<br/>
+> Develop RESTful API<br/>
+In reference, this source code shows how to use Autodesk Forge, Node red, Arduino BLE sense, Mongo DB, node.js.<br/>
 
 # License
 MIT License
