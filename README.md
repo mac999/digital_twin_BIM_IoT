@@ -9,7 +9,7 @@ Digital Twin based Building Environment Monitoring using BIM, IoT, AI
 <p align="center">
   <a href="https://youtu.be/vpp4oGP3DPI"><img width="400px" src="https://1.bp.blogspot.com/-OaqpSj6oYKU/YAsUJdbsIFI/AAAAAAAA5Bk/phBaKOy4F1YkVEIOJQ0UNcntFLqNXd0oACLcBGAsYHQ/w400-h300/KakaoTalk_20210122_130552110.jpg"/></a>
   <br/>  
-  <b>DTB-BMS sensor data</b>
+  <b>DTB-BMS sensor data</b></br>
   <img height="200px" src="https://github.com/mac999/digital_twin/blob/master/anomaly_detection/fig2.JPG">
   <img height="200px" src="https://github.com/mac999/digital_twin/blob/master/anomaly_detection/fig4.JPG"><br/> 
   <b>anomaly detection using deep learing model</b>
