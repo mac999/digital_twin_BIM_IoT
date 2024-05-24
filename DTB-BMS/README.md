@@ -11,7 +11,7 @@
 [![Viewer](https://img.shields.io/badge/Viewer-v7-green.svg)](https://forge.autodesk.com/)
 
 # Description
-In this DTB-BMS(Digital Twin and BIM based Building Management System), we will be creating a simple web page that allows end users to upload some files to Forge storage service, then translate them and display them in a web browser.
+In this DTB-BMS(Digital Twin and BIM based Building Management System) draft version (prototype), we will be creating a simple web page that allows end users to upload some files to Forge storage service, then translate them and display them in a web browser. 
 
 - IoT dataset visualization
 - IoT-BIM connnection
