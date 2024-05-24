@@ -111,7 +111,7 @@ Click on the `Authorize me` link and then click through the links on the browser
 # License
 This sample is licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT). Please see the [LICENSE](LICENSE) file for full details.
 
-# devleoper
+# developer
 <a href = "https://sites.google.com/site/bimprinciple/our-company/interests">Taewook Kang (laputa99999@gmail.com)</a>
 
 # Support
