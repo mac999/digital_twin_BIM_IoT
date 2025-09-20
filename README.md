@@ -27,5 +27,8 @@ This project includes like below.
 > Develop anomaly detection model using deep learning</br>
 In reference, this source code shows how to use Autodesk Forge, Node red, Arduino BLE sense, Mongo DB, node.js.<br/>
 
+# Author
+Taewook Kang (laputa99999@gmail.com)
+
 # License
 MIT License
