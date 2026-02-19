@@ -27,6 +27,19 @@ This project includes like below.
 > Develop anomaly detection model using deep learning</br>
 In reference, this source code shows how to use Autodesk Forge, Node red, Arduino BLE sense, Mongo DB, node.js.<br/>
 
+# Project Structure & Folders
+Below is a description of the main directories in this repository:
+
+* **DTB-BMS**: Contains the core application files for the **Digital Twin based Building Management System**. It integrates BIM models and real-time data for facility management.
+* **anomaly_detection**: Includes deep learning models and scripts designed to identify irregular patterns or anomalies in environmental sensor data.
+* **cesium-starterkit**: A template and basic configuration for using **CesiumJS** to visualize 3D geospatial data and BIM models within a web environment.
+* **cesium-workshop**: Practical workshop materials and examples for implementing 3D Digital Twin features using the Cesium library.
+* **mapbox-app**: A web-based application leveraging **Mapbox** for 2D/3D map visualization and building localization.
+* **mongodb_IoT**: Contains database schemas and integration scripts for persisting time-series IoT sensor data into **MongoDB**.
+* **resident_recognition_model_using_openpose**: An AI module utilizing **OpenPose** for human pose estimation to monitor occupancy or analyze resident behavior.
+* **sensingNano**: Firmware and source code for the **Arduino Nano 33 BLE Sense**, which acts as the primary hardware node for collecting environmental data.
+* **sensing_nano_nodered**: **Node-RED** flows and configurations for processing, routing, and visualizing data from the sensing nodes in real-time.
+
 # Author
 Taewook Kang (laputa99999@gmail.com)
 
