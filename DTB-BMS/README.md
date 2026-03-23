@@ -115,7 +115,9 @@ This sample is licensed under the terms of the [MIT License](http://opensource.o
 <a href = "https://sites.google.com/site/bimprinciple/our-company/interests">Taewook Kang (laputa99999@gmail.com)</a>
 
 # Reference
-[Taewook Kang, Yunjeong Mo, 2024, comprehensive digital twin framework for building environment monitoring with emphasis on real-time data connectivity and predictability](https://www.sciencedirect.com/science/article/pii/S2666165923001916)
+- [Taewook Kang, Yunjeong Mo, 2024, Comprehensive digital twin framework for building environment monitoring with emphasis on real-time data connectivity and predictability](https://www.sciencedirect.com/science/article/pii/S2666165923001916)
+- [Autodesk Digital Twin platform architecture analysis](https://daddynkidsmakers.blogspot.com/2021/02/autodesk-forge-digital-twin.html)
+
 
 # Support
 laputa99999@gmail.com
